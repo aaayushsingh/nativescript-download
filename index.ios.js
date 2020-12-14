@@ -21,6 +21,7 @@ export class NativescriptDownloader extends NativescriptDownloaderCommon {
         this.tasksReader = new NativePropertyReader();
         this.downloads = new Map();
         this.downloadsData = new Map();
+        NativescriptDownloader.timeout = 6000;
     }
     static init() { }
     static setTimeout(timeout) {
