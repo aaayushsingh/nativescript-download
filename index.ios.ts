@@ -27,6 +27,7 @@ export class NativescriptDownloader extends NativescriptDownloaderCommon {
       super();
       this.downloads = new Map();
       this.downloadsData = new Map();
+      NativescriptDownloader.timeout = 5000;
     }
     private static timeout = 60;
   
