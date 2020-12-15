@@ -35,7 +35,6 @@ export class NativescriptDownloader extends NativescriptDownloaderCommon {
     options: any,
   ): any {
     return new Promise<File>((resolve, reject) => {
-    console.log(options)
 
     const { url, progress, destinationFilePath } = options;
       // we check if options is a string
