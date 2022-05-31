@@ -3,13 +3,15 @@ import { NativescriptDownloaderCommon } from './common';
 export class NativescriptDownloader extends NativescriptDownloaderCommon {
 	constructor() {
 		super();
-		if (global.TNS_WEBPACK) {
-			// eslint-disable-next-line
-			const WorkerScript = require('nativescript-worker-loader!./android-worker.js');
-			this.worker = new WorkerScript();
-		} else {
-			this.worker = new Worker('./android-worker.js');
-		}
+		// if (global.TNS_WEBPACK) {
+		// 	// eslint-disable-next-line
+		// 	const WorkerScript = require('nativescript-worker-loader!./android-worker.js');
+		// 	this.worker = new WorkerScript();
+		// } else {
+
+		// ns 8 allows us to directly create workers
+		this.worker = new Worker('./android-worker.js');
+		// }
 	}
 	setProgressCallback(callback) {
 		this.progressCallback = callback;
