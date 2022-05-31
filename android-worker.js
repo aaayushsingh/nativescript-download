@@ -1,13 +1,19 @@
 /* global java org */
-if (global.TNS_WEBPACK) {
+
+// webpack is default for ns8
+// if (global.TNS_WEBPACK) {
     if (global.android) {
       // without this JavaProxy is missing and we can't import vendor below
       global.require('~/../internal/ts_helpers.js');
     }
     global.require('~/vendor');
-  } else {
-    require('globals');
-  }
+//   } else {
+//     require('globals');
+//   }
+
+// required for console and other global functions
+require('@nativescript/core/globals')
+
   export const File = require('@nativescript/core/file-system').File;
   const getFilenameFromUrl = require('@nativescript/core/http/http-request/http-request-common').getFilenameFromUrl;
   
